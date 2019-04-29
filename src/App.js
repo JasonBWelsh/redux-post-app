@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
-import PostForm from './components/Postform';
+import PostForm from './components/PostForm';
 import Posts from './components/Posts';
 import './App.css';
 
