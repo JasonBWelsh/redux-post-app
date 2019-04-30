@@ -5,13 +5,35 @@ import { fetchPosts } from '../actions/postActions';
 
 class Posts extends Component {
 
+    // test
+    // static getDerivedStateFromProps(nextProps, prevState) {
+    //     console.log('DRD __ inside `Posts` firing `getDerivedStateFromProps`');
+    //     // if(nextProps.newPost !== prevState.newPost) {
+    //     //     return { newPost: nextProps.newPost }
+    //     // } 
+    //     // else return null;
+    // }
+
+    // componentDidUpdate(prevProps, prevState) {
+        
+    // }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.newPost) {
+            this.props.posts.unshift(nextProps.newPost);
+        }
+    }
+
+    // end test 
+
     componentDidMount() {
         this.props.fetchPosts();
     }
 
     static propTypes = {
         fetchPosts: PropTypes.func.isRequired,
-        posts: PropTypes.array.isRequired
+        posts: PropTypes.array.isRequired,
+        newPost: PropTypes.object
     }
 
     render() {

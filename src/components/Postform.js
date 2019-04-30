@@ -49,7 +49,8 @@ class PostForm extends Component {
                     </div>
                     <br />
                     <div>
-                        <label>Body: </label><br />
+                        <label>Body: </label>
+                        <br />
                         <textarea 
                             name="body" 
                             value={this.state.body}
