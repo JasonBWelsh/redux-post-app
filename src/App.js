@@ -23,9 +23,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Modal open={this.state.showModal} onClose={this.toggleModal} />
-        <button onClick={this.toggleModal}>Open Modal in Portal</button>
         <Provider store={store}>
+          <Modal open={this.state.showModal} onClose={this.toggleModal} />
+          <button onClick={this.toggleModal}>Open Modal in Portal</button>
           <div className="App">
             <PostForm />
             <Posts />
