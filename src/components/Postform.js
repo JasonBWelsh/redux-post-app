@@ -26,6 +26,10 @@ class PostForm extends Component {
 
         // call to action
         this.props.createPost(post);
+        this.setState({
+            title: '',
+            body: '',
+        });
     }
 
     static propTypes = {

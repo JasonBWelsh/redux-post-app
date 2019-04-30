@@ -5,27 +5,6 @@ import { fetchPosts } from '../actions/postActions';
 
 class Posts extends Component {
 
-    // test
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //     console.log('DRD __ inside `Posts` firing `getDerivedStateFromProps`');
-    //     // if(nextProps.newPost !== prevState.newPost) {
-    //     //     return { newPost: nextProps.newPost }
-    //     // } 
-    //     // else return null;
-    // }
-
-    // componentDidUpdate(prevProps, prevState) {
-        
-    // }
-
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.newPost) {
-            this.props.posts.unshift(nextProps.newPost);
-        }
-    }
-
-    // end test 
-
     componentDidMount() {
         this.props.fetchPosts();
     }
@@ -45,7 +24,7 @@ class Posts extends Component {
         ));
         return (
             <div>
-                <h1>DRD</h1>
+                <h1>Recent Posts</h1>
                 {postItems}
             </div>
         );

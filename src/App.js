@@ -9,10 +9,6 @@ import store from './store';
 
 class App extends Component {
 
-  state = {
-    test: 'DRD'
-  }
-
   render() {
     return (
       <Provider store={store}>
