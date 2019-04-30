@@ -2,3 +2,14 @@
   width: 90%;
   margin: 0 auto;
 }
+
+/* testing - remove this ans use styled components */
+.modal {
+  height: 30vh;
+  width: 30vh;
+  background: tomato;
+  color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
