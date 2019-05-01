@@ -1,16 +1,28 @@
+body {
+  background: powderblue;
+}
+
 .App {
+  box-sizing: border-box;
   width: 90%;
   margin: 0 auto;
+  padding: 1em;
+  background: #323232;
+  color: #fff;
+}
+
+h1,h2,h3,label {
+  color: palevioletred;
 }
 
 /* testing - remove this ans use styled components */
-.modal {
+/* .modal {
   min-height: 30vh;
   min-width: 30vh;
   padding: 1em;
   background: tomato;
   color: #fff;
   position: fixed;
-  top: 50%;
+  top: 0;
   left: 50%;
-}
+} */

@@ -1,10 +1,15 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+import createSagaMiddleware from 'redux-saga';
 
 const initialState = {};
 
-const middleware = [thunk];
+const sagaMiddleware = createSagaMiddleware();
+
+//sagaMiddleware.run();
+
+const middleware = [thunk, sagaMiddleware];
 
 const store = createStore(
     rootReducer, 
@@ -15,4 +20,4 @@ const store = createStore(
     )
 );
 
-export default store;
+export default store; 
