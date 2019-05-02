@@ -8,8 +8,8 @@ export const ModalWrap = styled.div`
     min-height: 30vh;
     min-width: 30vh;
     padding: 1em;
-    border: 3px solid #fff;
-    background: #323232;
+    border: 3px solid palevioletred;
+    background: #000;
     color: #fff;
     position: fixed;
     top: 0;
@@ -23,7 +23,7 @@ export const Button = styled.button`
     border-radius: 3px;
     color: palevioletred;
     border: 2px solid palevioletred;
-    margin: 0 1em;
+    /* margin: 0 1em; */
     padding: 0.25em 1em;
     transition: 0.5s all ease-out;
 
@@ -32,12 +32,6 @@ export const Button = styled.button`
         color: white;
     }
 `;
-
-const Para = styled.p`
-    background: #767676;
-`;
-
-const ReversedParagraph  = props => <p {...props} children={props.children.split('').reverse().join('')}></p>
 
 // end styled component testing
 
@@ -53,7 +47,7 @@ class Modal extends Component {
                     <ModalWrap className="modal">
                         <Button onClick={onClose}>X</Button>
                         <h3 className="header">{posts[0].title}</h3>
-                        <Para as={ReversedParagraph}>{posts[0].body}</Para>
+                        <p>{posts[0].body}</p>
                     </ModalWrap>,
                     document.getElementById('modal-root')
                     )

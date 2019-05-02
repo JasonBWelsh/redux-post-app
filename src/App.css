@@ -1,5 +1,5 @@
 body {
-  background: powderblue;
+  background: #323232;
 }
 
 .App {
@@ -7,11 +7,10 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 1em;
-  background: #323232;
   color: #fff;
 }
 
-h1,h2,h3,label {
+h3,label {
   color: palevioletred;
 }
 

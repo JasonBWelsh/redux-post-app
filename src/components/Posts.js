@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/postActions';
+import styled from 'styled-components';
 
+export const Post = styled.div`
+    margin: 0 0 .5em 0;
+    border: 1px solid #434343;
+    padding: .5em 1em;
+`;
 class Posts extends Component {
 
     componentDidMount() {
@@ -17,10 +23,10 @@ class Posts extends Component {
 
     render() {
         const postItems = this.props.posts.map(post => (
-            <div key={post.id}>
+            <Post key={post.id}>
                 <h3>{post.title}</h3>
                 <p>{post.body}</p>
-            </div>
+            </Post>
         ));
         return (
             <div>

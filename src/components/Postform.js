@@ -2,6 +2,42 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createPost } from "../actions/postActions";
+import styled from 'styled-components';
+
+export const FormInput = styled.input`
+    background: transparent;
+    outline: none;
+    width: 300px;
+    border: 1px solid palevioletred;
+    margin-top: 1em;
+    padding: .5em;
+    color: #fff;
+    transition: all .3s ease-out;
+
+    &:focus: {
+        width: 33%;
+    }
+`;
+
+export const Button = styled.button`
+    cursor: pointer;
+    background: transparent;
+    font-size: 16px;
+    border-radius: 3px;
+    color: palevioletred;
+    border: 2px solid palevioletred;
+    padding: 0.25em 1em;
+    transition: 0.5s all ease-out;
+
+    &:hover {
+        background-color: palevioletred;
+        color: white;
+    }
+`;
+
+const FormTextArea = styled(FormInput)`
+    height: 150px;
+`;
 
 class PostForm extends Component {
   state = {
@@ -43,7 +79,7 @@ class PostForm extends Component {
           <div>
             <label>Title: </label>
             <br />
-            <input
+            <FormInput
               type="text"
               name="title"
               value={this.state.title}
@@ -54,14 +90,14 @@ class PostForm extends Component {
           <div>
             <label>Body: </label>
             <br />
-            <textarea
+            <FormTextArea
               name="body"
               value={this.state.body}
               onChange={this.handleChange}
             />
           </div>
           <br />
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form>
       </div>
     );

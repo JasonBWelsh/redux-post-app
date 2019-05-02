@@ -4,9 +4,26 @@ import { Provider } from 'react-redux';
 import PostForm from './components/PostForm';
 import Posts from './components/Posts';
 import Modal from './components/Modal';
+
+import styled from 'styled-components';
 import './App.css';
 
 import store from './store';
+
+export const ModalButton = styled.button`
+  padding: 1em;
+  outline: none;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 5%;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
 
 class App extends Component {
 
@@ -25,7 +42,7 @@ class App extends Component {
       <React.Fragment>
         <Provider store={store}>
           <Modal open={this.state.showModal} onClose={this.toggleModal} />
-          <button onClick={this.toggleModal}>Open Modal in Portal</button>
+          <ModalButton onClick={this.toggleModal}>Open Modal in Portal</ModalButton>
           <div className="App">
             <PostForm />
             <Posts />
