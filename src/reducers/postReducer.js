@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST } from "../actions/types";
+import { NEW_POST } from "../actions/types";
 import { FETCH_POSTS_ASYNC } from '../sagas/saga';
 
 const initialState = {
@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
     console.log('DRD-5-A inside reducer logging `action`:::', action);
   switch (action.type) {
     case FETCH_POSTS_ASYNC: {
-      console.log("DRD __ inside reducer in `FETCH_POSTS` case logging");
+      console.log("DRD __ inside reducer in `FETCH_POSTS_ASYNC` case logging action type", action.type);
       return {
         ...state,
         items: action.payload

@@ -1,11 +1,12 @@
-import { takeEvery, takeLatest, call, put } from "redux-saga/effects";
+import { takeEvery, takeLatest, call, put, fork, all } from "redux-saga/effects";
 import axios from "axios";
 
-// TESTING
-// export const FETCH_POSTS = "FETCH_POSTS";
-// export const NEW_POST = "NEW_POST";
-//
 export const FETCH_POSTS_ASYNC = "FETCH_POSTS_ASYNC";
+export const NEW_POST_ASYNC = 'NEW_POST_ASYNC';
+
+////
+// Sagas for FETCH_POSTS
+////
 
 // watcher saga for FETCH_POSTS
 export function* watchFetchPosts() {
@@ -42,4 +43,30 @@ function* fetchPostsWorker() {
     // Need to dispatch a failure action to store
     console.log(error);
   }
+}
+
+
+////
+// Sagas for NEW_POST
+////
+
+//NEW_POST watcher
+export function* watchNewPost() {
+    console.log('DRD 6 __ `watchNewPost` fired!!!');
+    yield takeLatest("NEW_POST", newPostWorker);
+}
+
+// NEW_POST worker
+function* newPostWorker() {
+    console.log('DRD 7 __ `newPostWorker fired!!!');
+}
+
+////////////////
+// root saga //
+///////////////
+export function* rootSaga() {
+    yield all([
+        yield takeLatest("FETCH_POSTS", fetchPostsWorker),
+        yield takeLatest("NEW_POST", newPostWorker)
+    ]);
 }

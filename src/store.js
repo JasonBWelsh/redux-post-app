@@ -2,7 +2,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import createSagaMiddleware from 'redux-saga';
-import { watchFetchPosts } from './sagas/saga'; // watcher sagas 
+// import { watchFetchPosts } from './sagas/saga'; // watcher sagas 
+// test root saga
+import { rootSaga } from './sagas/saga';
 
 const initialState = {};
 
@@ -25,6 +27,8 @@ const store = createStore(
 );
 
 // run the saga
-sagaMiddleware.run(watchFetchPosts);
+// sagaMiddleware.run(watchFetchPosts);
+// test root saga
+sagaMiddleware.run(rootSaga);
 
 export default store; 
