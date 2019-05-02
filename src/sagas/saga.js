@@ -1,10 +1,6 @@
-import { takeEvery, takeLatest, call, put } from "redux-saga/effects";
+import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 
-// TESTING
-// export const FETCH_POSTS = "FETCH_POSTS";
-// export const NEW_POST = "NEW_POST";
-//
 export const FETCH_POSTS_ASYNC = "FETCH_POSTS_ASYNC";
 
 // watcher saga for FETCH_POSTS

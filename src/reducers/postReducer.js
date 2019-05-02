@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST } from "../actions/types";
+import { NEW_POST } from "../actions/types";
 import { FETCH_POSTS_ASYNC } from '../sagas/saga';
 
 const initialState = {
@@ -20,18 +20,7 @@ export default function(state = initialState, action) {
 
     case NEW_POST: {
       console.log("DRD __ inside reducer in `NEW_POST` case");
-      const drdTest = {
-        ...state,
-        items: [action.payload, ...state.items]
-      };
-      console.log(
-        "DRD __ inside `NEW_POST` case in reducer logging test output:::",
-        drdTest
-      );
-      console.log(
-        "DRD __ inside `NEW_POST` case in reducer logging `action`:::",
-        action
-      );
+     
       return {
         ...state,
         items: [action.payload, ...state.items]
