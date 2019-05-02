@@ -34,6 +34,10 @@ class Posts extends Component {
 const mapStateToProps = state => ({
     posts: state.posts.items,
     newPost: state.posts.item
-}); 
+});
+
+// const mapDispatchToProps = dispatch => ({
+
+// })
 
 export default connect(mapStateToProps, { fetchPosts })(Posts);
