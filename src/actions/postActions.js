@@ -39,9 +39,10 @@ export const fetchPosts = () => dispatch => {
 // };
 
 //test saga for NEW_POST
-export const createPost = () => dispatch => {
+export const createPost = postData => dispatch => {
+    console.log('TESST #@%@#^!$^!$^ postData', postData);
     dispatch({
         type: NEW_POST,
-        payload: ['DRD TEST NEW_POST'], // test initial value
+        payload: postData, // test initial value
     });
 }
